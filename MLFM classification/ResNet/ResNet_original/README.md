@@ -25,7 +25,7 @@ pip install -r requirements.txt
 python train.py --config config/resnet10.yaml
 ```
 
-## Usage
+## Acknowledgments
 The foundational code for our project is derived from the repository "pytorch_image_classification" by hysts. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_ResNet network.
 
 To learn more about the original "pytorch_image_classification" repository by hysts(https://github.com/hysts), please visit here(https://github.com/hysts/pytorch_image_classification).
