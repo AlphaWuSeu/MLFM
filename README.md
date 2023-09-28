@@ -20,5 +20,15 @@ The foundational code for our project is derived from the repository "mobilenetv
 
 To learn more about the original "mobilenetv2.pytorch" repository by hysts(https://github.com/d-li14), please visit here(https://github.com/d-li14/mobilenetv2.pytorch).
 
+# ConvNeXt
+The foundational code for our project is derived from the repository "inceptionnext" by Sea AI Lab. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_ConvNeXt network. (In this repository, ConvNeXt is also implemented at the same time as InceptionNeXt.)
+
+To learn more about the original "inceptionnext" repository by Sea AI Lab(https://github.com/sail-sg), please visit here(https://github.com/sail-sg/inceptionnext).
+
+# inceptionnext
+The foundational code for our project is derived from the repository "inceptionnext" by Sea AI Lab. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_InceptionNeXt network.
+
+To learn more about the original "inceptionnext" repository by Sea AI Lab(https://github.com/sail-sg), please visit here(https://github.com/sail-sg/inceptionnext).
+
 # Dataset ImageNet100
 ImageNet-100 is a subset of ImageNet-1k Dataset from ImageNet Large Scale Visual Recognition Challenge 2012. It contains random 100 classes as specified in Labels.json file. The datase can be downloaded in https://www.kaggle.com/datasets/ambityga/imagenet100
