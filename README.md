@@ -1,34 +1,80 @@
-# MLFM
-# Project of Multi-scale low-frequency Memory Network(MLFM)
+# Multiscale Low-Frequency Memory (MLFM) Network for Enhanced CNNs
 
-This is the code for Multiscale Low-Frequency Memory Network
+Deep learning, particularly Convolutional Neural Networks (CNNs), have driven monumental advancements across various research arenas. However, their inherent shortcomings in handling low-frequency information often pose challenges, especially in tasks like deciphering global structures or managing smoothly transitioning images. While transformers exhibit commendable performance across tasks, their intricate optimization intricacies underscore an ongoing necessity for sophisticated CNN enhancements with constrained resources.
 
-Our paper is proposing a a multiscale low-frequency memory (MLFM) network, which could effectively provide low-frequency information storage to popular networks. We will test the effect of our Low-Frequency Memory Unit (LFMU) in different networks. So, we will make direct improvements in the original code of several popular networks, which can be seen:
+**MLFM** emerges as a solution to these intricacies.
 
-# ResNet
-The foundational code for our project is derived from the repository "pytorch_image_classification" by hysts. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_ResNet network.
+## Introduction
 
-To learn more about the original "pytorch_image_classification" repository by hysts(https://github.com/hysts), please visit here(https://github.com/hysts/pytorch_image_classification).
+The **Multiscale Low-Frequency Memory (MLFM) Network** is a revolutionary framework crafted with an intent to harness the untapped prowess of CNNs without tampering with their intrinsic complexity. Central to its design is the **Low-Frequency Memory Unit (LFMU)**, a unique component adept at retaining diverse low-frequency information, thus boosting performance in designated computer vision undertakings. One of MLFM's standout features is its impeccable compatibility with a plethora of leading-edge networks, sans the need to modify their foundational structures.
 
-# SeNet
-The foundational code for this project is derived from the repository "SENet-PyTorch" by Kaifeng Wei. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_SENet network.
+## Key Features
+- Efficient preservation of low-frequency details.
+- Seamless integration with renowned networks like ResNet, MobileNet, EfficientNet, and ConvNeXt.
+- Demonstrated efficacy beyond image classification - adaptable to image-to-image translation endeavors such as semantic segmentation networks like FCN and U-Net.
 
-To learn more about the original "SENet-PyTorch" repository by hysts(https://github.com/miraclewkf), please visit here(https://github.com/miraclewkf/SENet-PyTorch).
+## Networks Integrated with MLFM
 
-# MobileNetV2
-The foundational code for our project is derived from the repository "mobilenetv2.pytorch" by Duo Li. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_MobileNet network.
+### ResNet
+Derived and adapted from "pytorch_image_classification" by hysts.  
+[Original Repository](https://github.com/hysts/pytorch_image_classification)
 
-To learn more about the original "mobilenetv2.pytorch" repository by hysts(https://github.com/d-li14), please visit here(https://github.com/d-li14/mobilenetv2.pytorch).
+### SeNet
+Adapted from "SENet-PyTorch" by Kaifeng Wei.  
+[Original Repository](https://github.com/miraclewkf/SENet-PyTorch)
 
-# ConvNeXt
-The foundational code for our project is derived from the repository "inceptionnext" by Sea AI Lab. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_ConvNeXt network. (In this repository, ConvNeXt is also implemented at the same time as InceptionNeXt.)
+### MobileNetV2
+Sourced from "mobilenetv2.pytorch" by Duo Li.  
+[Original Repository](https://github.com/d-li14/mobilenetv2.pytorch)
 
-To learn more about the original "inceptionnext" repository by Sea AI Lab(https://github.com/sail-sg), please visit here(https://github.com/sail-sg/inceptionnext).
+### ConvNeXt & inceptionnext
+Both these networks are adapted from the "inceptionnext" repository by Sea AI Lab.  
+[Original Repository](https://github.com/sail-sg/inceptionnext)
 
-# inceptionnext
-The foundational code for our project is derived from the repository "inceptionnext" by Sea AI Lab. We appreciate their contribution to the open-source community. Our adaptation involves the integration of our own LFUM unit, resulting in the creation of the MLFM_InceptionNeXt network.
+## Dataset Utilized
+**ImageNet100**: A subset of ImageNet-1k Dataset from the ImageNet Large Scale Visual Recognition Challenge 2012. It encapsulates 100 random classes as detailed in the `Labels.json` file.  
+[Download Dataset](https://www.kaggle.com/datasets/ambityga/imagenet100)
 
-To learn more about the original "inceptionnext" repository by Sea AI Lab(https://github.com/sail-sg), please visit here(https://github.com/sail-sg/inceptionnext).
+## Train && test
+Please train and validate in the manner provided in the original catalogue of the network.
 
-# Dataset ImageNet100
-ImageNet-100 is a subset of ImageNet-1k Dataset from ImageNet Large Scale Visual Recognition Challenge 2012. It contains random 100 classes as specified in Labels.json file. The datase can be downloaded in https://www.kaggle.com/datasets/ambityga/imagenet100
+## Concluding Remarks
+This endeavor underscores a monumental leap in optimizing CNNs' potential within resource constraints, building on existing CNN paradigms and setting the stage for imminent breakthroughs in computer vision.
+
+The accuracies of our network compared to the original CNN network on ImageNet100 is shown below.
+| Network              | Baseline Accuracy | MLFM Enhanced Accuracy |
+|----------------------|-------------------|------------------------|
+|ResNet10|77.58%|78.64%|
+|ResNet18|77.86%|81.22%|
+|ResNet34|79.82%|81.50%|
+|ResNet50|80.16%|81.80%|
+|MobileNetV2_0.1|58.38%|62.86%|
+|MobileNetV2_0.35|76.82%|79.24%|
+|MobileNetV2_0.5|79.64%|80.36%|
+|MobileNetV2_0.75|81.82%|82.60%|
+|MobileNetV2_1.0|82.52%|83.06%|
+|RegNetX_200M|77.59%|79.02%|
+|RegNetX_400M|78.92%|81.68%|
+|RegNetX_600M|81.34%|81.98%|
+|RegNetX_800M|82.70%|83.36%|
+|RegNetY_200M|77.90%|78.94%|
+|RegNetY_400M|79.32%|81.48%|
+|RegNetY_600M|80.54%|82.48%|
+|RegNetY_800M|82.70%|82.98%|
+|EfficientNet_B0|83.84%|83.44%|
+|EfficientNet_B1|83.94%|84.64%|
+|EfficientNet_B2|84.16%|84.54%|
+|EfficientNet_B3|84.28%|85.30%|
+|EfficientNet_B4|84.68%|85.96%|
+|SeNet10|74.98%|75.40%|
+|SeNet18|76.34%|77.86%|
+|SeNet34|78.80%|78.98%|
+|SeNet50|79.56%|80.36%|
+|ConvNeXt_K3_par1_8|88.03%|88.30%|
+|ConvNeXt_K3_par1_4|88.02%|88.46%|
+|ConvNeXt_K3_par1_2|88.15%|88.33%|
+|ConvNeXt_K3|88.11%|88.32%|
+|ConvNeXt_K5|88.18%|88.42%|
+|ConvNeXt_tiny|88.12%|88.60%|
+|ConvNeXt_small|88.08%|88.34%|
+|InceptionNeXt|87.58%|88.06%|
